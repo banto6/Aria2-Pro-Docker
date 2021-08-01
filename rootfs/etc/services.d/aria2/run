@@ -14,5 +14,15 @@
 
 umask ${UMASK_SET:-022}
 
+$input_file=`grep "input-file" /config/aria2.conf | awk -F '=' '{print $2}'`
+$new_input_file= `dirname $input_file`"/session/${HOST_NAME}-"`basename $input_file`
+
+$save_session=`grep "save-session" /config/aria2.conf | awk -F '=' '{print $2}'`
+$new_save_session= `dirname $input_file`"/session/${HOST_NAME}-"`basename $input_file`
+
+
+
 exec s6-setuidgid p3terx aria2c \
-    --conf-path=/config/aria2.conf
+    --conf-path=/tmp/aria2.conf \
+    --input-file=${new_input_file} \
+    --save-session=${new_save_session}
