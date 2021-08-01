@@ -15,6 +15,7 @@
 . /etc/init-base
 
 mkdir -p ${ARIA2_CONF_DIR} ${SCRIPT_DIR} ${DOWNLOAD_DIR}
+mkdir ${ARIA2_CONF_DIR}/sessions
 
 PROFILES="
 aria2.conf
