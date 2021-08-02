@@ -23,6 +23,6 @@ $new_save_session= `dirname $input_file`"/sessions/${HOST_NAME}-"`basename $inpu
 
 
 exec s6-setuidgid p3terx aria2c \
-    --conf-path=/tmp/aria2.conf \
+    --conf-path=/config/aria2.conf \
     --input-file=${new_input_file} \
     --save-session=${new_save_session}
