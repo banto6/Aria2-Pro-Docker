@@ -14,12 +14,8 @@
 FROM p3terx/s6-alpine
 
 RUN apk add --no-cache jq findutils && \
-    export https_proxy=socks5://proxy.local.com:1080 && \
-    export http_proxy=socks5://proxy.local.com:1080 && \
     curl -fsSL git.io/aria2c.sh | bash && \
-    rm -rf /var/cache/apk/* /tmp/* && \
-    unset https_proxy && \
-    unset http_proxy
+    rm -rf /var/cache/apk/* /tmp/*
 
 COPY rootfs /
 
