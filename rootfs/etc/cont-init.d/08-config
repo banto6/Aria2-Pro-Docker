@@ -30,8 +30,8 @@ LICENSE
 DOWNLOAD_PROFILE
 
 [[ ! -f "${ARIA2_CONF_DIR}/aria2.session" ]] && {
-    rm -rf "${ARIA2_CONF_DIR}/aria2.session"
-    touch "${ARIA2_CONF_DIR}/aria2.session"
+    rm -rf "${ARIA2_CONF_DIR}/sessions/${HOST_NAME}.session"
+    touch "${ARIA2_CONF_DIR}/sessions/${HOST_NAME}.session"
 }
 
 if ! [[ "${UPDATE_TRACKERS}" = "false" || "${UPDATE_TRACKERS}" = "disable" ]]; then
