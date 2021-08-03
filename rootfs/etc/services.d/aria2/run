@@ -15,10 +15,10 @@
 umask ${UMASK_SET:-022}
 
 input_file=`grep "input-file" /config/aria2.conf | awk -F '=' '{print $2}'`
-new_input_file=`dirname $input_file`"/sessions/${HOST_NAME}-"`basename $input_file`
+new_input_file=`dirname $input_file`"/sessions/${HOST_NAME}".session"
 
 save_session=`grep "save-session" /config/aria2.conf | awk -F '=' '{print $2}'`
-new_save_session=`dirname $input_file`"/sessions/${HOST_NAME}-"`basename $input_file`
+new_save_session=`dirname $input_file`"/sessions/${HOST_NAME}".session"
 
 
 
